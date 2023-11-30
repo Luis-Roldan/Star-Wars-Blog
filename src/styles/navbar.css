@@ -1,0 +1,22 @@
+.navbar {
+  background-color: aquamarine;
+}
+
+.Logo {
+  width: 8rem;
+  height: 7rem;
+}
+
+.dropdown {
+  color: aqua;
+}
+
+.btn {
+  color: black;
+  background: gold;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  background-color: aliceblue;
+}

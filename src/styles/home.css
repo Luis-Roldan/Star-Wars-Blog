@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(12, 12, 12);
+}
+
+.titles {
+  color: crimson;
+}
+
+.cardContainer {
+  margin: 30px;
+}
