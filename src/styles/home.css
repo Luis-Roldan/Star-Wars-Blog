@@ -9,3 +9,11 @@ body {
 .cardContainer {
   margin: 30px;
 }
+
+.heartButton {
+  background-color: transparent;
+  border: none;
+}
+
+/* .heartButton i.fa-regular.fa-heart {
+} */

@@ -14,28 +14,28 @@ export const Navbar = () => {
           />
         </a>
       </div>
-      <div class="dropdown dropstart">
+      <div className="dropdown dropstart">
         <button
-          class="btn btn-secondary btn-lg dropdown-toggle"
+          className="btn btn-secondary btn-lg dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           Favorites
         </button>
-        <ul class="dropdown-menu lg">
+        <ul className="dropdown-menu lg">
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Action
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Another action
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <a className="dropdown-item" href="#">
               Something else here
             </a>
           </li>
