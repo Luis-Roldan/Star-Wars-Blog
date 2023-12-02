@@ -9,7 +9,10 @@ export const HeartButton = () => {
 
   return (
     <button className="heartButton" onClick={handleClickFavorite}>
-      <i className="fa-regular fa-heart" style={{ color: heartColor }}></i>
+      <i
+        className={`fa-${heartColor == "red" ? "solid" : "regular"} fa-heart`}
+        style={{ color: heartColor }}
+      ></i>
     </button>
     // <button
     //   onClick={handleClickFavorite}
