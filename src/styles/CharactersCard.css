@@ -1,0 +1,20 @@
+.cardContainer {
+  margin: 30px;
+}
+
+.CharacterCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.CharacterCard:hover {
+  transform: translateX(10px); /* Ajusta según sea necesario */
+}
+
+.heartButton {
+  background-color: transparent;
+  border: none;
+}

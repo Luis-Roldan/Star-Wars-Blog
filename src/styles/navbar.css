@@ -1,5 +1,18 @@
 .navbar {
   background-color: aquamarine;
+
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1000;
+  margin-bottom: 50px; */
+}
+
+.navbarContent {
+  padding: 5px;
+  margin-top: 10px;
 }
 
 .Logo {

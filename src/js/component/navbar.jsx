@@ -4,8 +4,8 @@ import "../../styles/navbar.css";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex ">
+      <div className="container-fluid navbarContent">
         <a className="navbar-brand" href="#">
           <img
             src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png"
@@ -26,17 +26,7 @@ export const Navbar = () => {
         <ul className="dropdown-menu lg">
           <li>
             <a className="dropdown-item" href="#">
-              Action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Something else here
+              Prueba de favorito
             </a>
           </li>
         </ul>

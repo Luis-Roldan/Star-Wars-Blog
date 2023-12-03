@@ -14,11 +14,5 @@ export const HeartButton = () => {
         style={{ color: heartColor }}
       ></i>
     </button>
-    // <button
-    //   onClick={handleClickFavorite}
-    //   style={{ backgroundColor: "transparent", border: "none" }}
-    // >
-    //   <FontAwesomeIcon icon={faHeart} style={{ color: heartColor }} />
-    // </button>
   );
 };
