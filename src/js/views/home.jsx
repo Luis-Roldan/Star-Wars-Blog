@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/home.css";
 import { CharactersCard } from "../component/CharactersCard.jsx";
 import { PlanetsCard } from "../component/PlanetsCard.jsx";
+import { StarshipsCard } from "../component/StarshipsCard.jsx";
 import { HeartButton } from "../component/HeartButton.jsx";
 
 export const Home = () => {
@@ -28,6 +29,19 @@ export const Home = () => {
           <PlanetsCard />
           <PlanetsCard />
           <PlanetsCard />
+        </div>
+      </section>
+
+      <section>
+        <h2 className="titles my-4">Starships</h2>
+
+        <div className="row row-cols-1 row-cols-md-3 g-4 cardContainer d-flex flex-nowrap ">
+          <StarshipsCard />
+          <StarshipsCard />
+          <StarshipsCard />
+          <StarshipsCard />
+          <StarshipsCard />
+          <StarshipsCard />
         </div>
       </section>
     </div>
