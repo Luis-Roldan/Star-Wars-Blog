@@ -1,6 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
-    store: { characters: [], planets: [], error: null },
+    store: { characters: [], planets: [], starships: [], error: null },
     actions: {
       fetchCharacters: async () => {
         try {
@@ -97,6 +97,56 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({
             ...store,
             planets: [],
+            error: error.message,
+          });
+        }
+      },
+
+      fetchStarships: async () => {
+        try {
+          const response = await fetch("https://www.swapi.tech/api/starships/");
+          if (!response.ok) {
+            throw new Error(
+              `Error al obtener las naves espaciales. Código de estado: ${response.status}`
+            );
+          }
+
+          const responseData = await response.json();
+          const starships = responseData.results;
+
+          const starshipsWithDetails = await Promise.all(
+            starships.map(async (starship) => {
+              try {
+                const detailResponse = await fetch(starship.url);
+                if (!detailResponse.ok) {
+                  throw new Error(
+                    `Error al obtener detalles de la nave espacial. Código de estado: ${detailResponse.status}`
+                  );
+                }
+
+                const detailData = await detailResponse.json();
+                console.log(detailData.result.properties);
+                return { ...starship, details: detailData.result.properties };
+              } catch (error) {
+                console.error(error);
+                return { ...starship, details: {} };
+              }
+            })
+          );
+
+          const store = getStore();
+
+          setStore({
+            ...store,
+            starships: starshipsWithDetails,
+            error: null,
+          });
+        } catch (error) {
+          const store = getStore();
+
+          setStore({
+            ...store,
+            starships: [],
             error: error.message,
           });
         }
