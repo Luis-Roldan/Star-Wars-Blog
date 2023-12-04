@@ -7,7 +7,7 @@ export const StarshipsCard = () => {
     <div className="col CharacterCard">
       <div className="card h-100">
         <img
-          src="https://starwars-visualguide.com/assets/img/planets/2.jpg"
+          src="https://starwars-visualguide.com/assets/img/starships/5.jpg"
           className="card-img-top"
           alt="..."
           onError={(event) => {

@@ -11,7 +11,7 @@
 }
 
 .CharacterCard:hover {
-  transform: translateX(10px); /* Ajusta según sea necesario */
+  transform: translateX(10px);
 }
 
 .heartButton {

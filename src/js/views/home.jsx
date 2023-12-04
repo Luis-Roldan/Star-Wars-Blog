@@ -12,11 +12,6 @@ export const Home = () => {
         <h2 className="titles my-4">Characters</h2>
         <div className="row row-cols-1 row-cols-md-3 g-4 cardContainer d-flex flex-nowrap ">
           <CharactersCard />
-          <CharactersCard />
-          <CharactersCard />
-          <CharactersCard />
-          <CharactersCard />
-          <CharactersCard />
         </div>
       </section>
       <section>
