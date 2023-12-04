@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../../styles/CharactersCard.css";
+import "../../styles/CardsStyles.css";
 import { HeartButton } from "../component/HeartButton.jsx";
 import { Context } from "../store/appContext";
 
@@ -10,7 +10,6 @@ export const CharactersCard = () => {
     if (store.characters.length === 0) {
       actions.fetchCharacters();
     }
-    console.log("Chau");
   }, [actions, store.characters]);
 
   if (store.error) {
@@ -18,7 +17,7 @@ export const CharactersCard = () => {
   }
 
   return (
-    <div className="IndividualCard">
+    <div className="CardGroups">
       {store.characters.map((character) => (
         <div key={character.uid} className="CharacterCard">
           <div className="card h-100">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../../styles/CharactersCard.css";
+import "../../styles/CardsStyles.css";
 import { HeartButton } from "../component/HeartButton.jsx";
 import { Context } from "../store/appContext";
 
@@ -17,7 +17,7 @@ export const PlanetsCard = () => {
   }
 
   return (
-    <div className="IndividualCard">
+    <div className="CardGroups">
       {store.planets.map((planet) => (
         <div key={planet.uid} className="CharacterCard">
           <div className="card h-100">

@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
 
                 const detailData = await detailResponse.json();
-                console.log(detailData.result.properties, "Hola");
+                console.log(detailData.result.properties);
                 return { ...character, details: detailData.result.properties };
               } catch (error) {
                 console.error(error);

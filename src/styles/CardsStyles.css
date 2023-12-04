@@ -20,8 +20,10 @@
 }
 .CharacterCard {
   width: 600px;
+  padding-left: 85px !important;
+  padding-right: 85px !important;
 }
 
-.IndividualCard {
+.CardGroups {
   display: flex;
 }
