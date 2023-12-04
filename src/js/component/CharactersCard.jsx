@@ -10,6 +10,7 @@ export const CharactersCard = () => {
     if (store.characters.length === 0) {
       actions.fetchCharacters();
     }
+    console.log("Chau");
   }, [actions, store.characters]);
 
   if (store.error) {
@@ -17,13 +18,13 @@ export const CharactersCard = () => {
   }
 
   return (
-    <div>
+    <div className="IndividualCard">
       {store.characters.map((character) => (
-        <div key={character.uid} className="col CharacterCard">
+        <div key={character.uid} className="CharacterCard">
           <div className="card h-100">
             <img
               src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`}
-              className="card-img-top"
+              className="card-img-top w-100"
               alt="..."
               onError={(event) => {
                 event.target.src =
@@ -32,9 +33,26 @@ export const CharactersCard = () => {
             />
             <div className="card-body">
               <h5 className="card-title">{character.name}</h5>
-              <p className="card-text">
-                {character.details?.properties || "No description available"}
-              </p>
+              <ul>
+                <li>
+                  <strong>Gender: </strong>
+                  {character && character.details
+                    ? JSON.stringify(character.details.gender)
+                    : "Cargando..."}{" "}
+                </li>
+                <li>
+                  <strong>Hair Color: </strong>
+                  {character && character.details
+                    ? JSON.stringify(character.details.hair_color)
+                    : "Cargando..."}{" "}
+                </li>
+                <li>
+                  <strong>Eye Color: </strong>
+                  {character && character.details
+                    ? JSON.stringify(character.details.eye_color)
+                    : "Cargando..."}{" "}
+                </li>
+              </ul>
             </div>
             <div className="card-footer d-flex justify-content-between">
               <button>Learn more!</button>

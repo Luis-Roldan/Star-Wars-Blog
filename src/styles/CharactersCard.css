@@ -18,3 +18,10 @@
   background-color: transparent;
   border: none;
 }
+.CharacterCard {
+  width: 600px;
+}
+
+.IndividualCard {
+  display: flex;
+}

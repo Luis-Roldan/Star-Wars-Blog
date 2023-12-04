@@ -25,10 +25,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
 
                 const detailData = await detailResponse.json();
+                console.log(detailData.result.properties, "Hola");
                 return { ...character, details: detailData.result.properties };
               } catch (error) {
                 console.error(error);
-                return { ...character, details: {} }; // Si hay un error, asigna detalles vacíos
+                return { ...character, details: {} };
               }
             })
           );

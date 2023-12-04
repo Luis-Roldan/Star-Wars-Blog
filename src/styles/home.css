@@ -8,6 +8,8 @@ body {
 
 .cardContainer {
   margin: 30px;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 .heartButton {
