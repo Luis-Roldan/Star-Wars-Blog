@@ -55,7 +55,7 @@ export const StarshipsCard = () => {
             </div>
             <div className="card-footer d-flex justify-content-between">
               <button>Learn more!</button>
-              <HeartButton />
+              <HeartButton someItem={starship} />
             </div>
           </div>
         </div>

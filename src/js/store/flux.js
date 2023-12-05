@@ -1,7 +1,50 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
-    store: { characters: [], planets: [], starships: [], error: null },
+    store: {
+      characters: [],
+      planets: [],
+      starships: [],
+      favorites: [],
+      error: null,
+    },
     actions: {
+      //     const favoritesFromLocalStorage = JSON.parse(localStorage.getItem("favorites")) || [],
+      // console.log(localStorage, "HOLAAAAAAAAAAAAAAAAAAAA"),
+
+      removeFromFavorites: (uid) => {
+        const store = getStore();
+        const updatedFavorites = store.favorites.filter(
+          (item) => item.someItem.uid !== uid
+        );
+        console.log(uid, "uid");
+        console.log(updatedFavorites, "updatedFavorites");
+        setStore({
+          ...store,
+          favorites: updatedFavorites,
+        });
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      },
+
+      addToFavorites: (favorite) => {
+        const store = getStore();
+        const updatedFavorites = [...store.favorites, favorite];
+        console.log(updatedFavorites);
+        setStore({
+          ...store,
+          favorites: updatedFavorites,
+        });
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      },
+      updateFavoritesFromLocalStorage: () => {
+        const favoritesFromLocalStorage =
+          JSON.parse(localStorage.getItem("favorites")) || [];
+        const store = getStore();
+        setStore({
+          ...store,
+          favorites: favoritesFromLocalStorage,
+        });
+      },
+
       fetchCharacters: async () => {
         try {
           const response = await fetch("https://www.swapi.tech/api/people/");

@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  const favorites = store.favorites;
+  console.log(store);
+
+  const handleRemoveFromFavorites = (uid) => {
+    actions.removeFromFavorites(uid);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex ">
       <div className="container-fluid navbarContent">
@@ -23,12 +32,23 @@ export const Navbar = () => {
         >
           Favorites
         </button>
+
         <ul className="dropdown-menu lg">
-          <li>
-            <a className="dropdown-item" href="#">
-              Prueba de favorito
-            </a>
-          </li>
+          {favorites.length > 0 ? (
+            favorites.map((favorite) => (
+              <li key={favorite.someItem.uid} className="dropdown-item">
+                {favorite.someItem.name}
+                <i
+                  className="fa-solid fa-trash"
+                  onClick={() =>
+                    handleRemoveFromFavorites(favorite.someItem.uid)
+                  }
+                ></i>
+              </li>
+            ))
+          ) : (
+            <li className="dropdown-item">No hay favoritos</li>
+          )}
         </ul>
       </div>
     </nav>

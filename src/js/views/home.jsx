@@ -19,11 +19,6 @@ export const Home = () => {
 
         <div className="cardContainer d-flex flex-nowrap ">
           <PlanetsCard />
-          <PlanetsCard />
-          <PlanetsCard />
-          <PlanetsCard />
-          <PlanetsCard />
-          <PlanetsCard />
         </div>
       </section>
 
@@ -31,11 +26,6 @@ export const Home = () => {
         <h2 className="titles my-4">Starships</h2>
 
         <div className="cardContainer d-flex flex-nowrap ">
-          <StarshipsCard />
-          <StarshipsCard />
-          <StarshipsCard />
-          <StarshipsCard />
-          <StarshipsCard />
           <StarshipsCard />
         </div>
       </section>

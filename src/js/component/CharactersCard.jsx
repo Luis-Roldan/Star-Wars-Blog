@@ -55,7 +55,7 @@ export const CharactersCard = () => {
             </div>
             <div className="card-footer d-flex justify-content-between">
               <button>Learn more!</button>
-              <HeartButton />
+              <HeartButton someItem={character} />
             </div>
           </div>
         </div>
