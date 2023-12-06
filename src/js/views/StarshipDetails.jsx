@@ -21,57 +21,63 @@ export const StarshipDetails = () => {
 
   return (
     <div className="DetailsContainer">
-      <div className="card mb-3">
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img
-              src={`https://starwars-visualguide.com/assets/img/starships/${uid}.jpg`}
-              className="img-fluid rounded-start"
-              alt="..."
-              onError={(event) => {
-                event.target.src =
-                  "https://starwars-visualguide.com/assets/img/placeholder.jpg";
-              }}
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">
-                {starship.result?.properties?.name}
-              </h5>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Delectus adipisci quibusdam reprehenderit, repellat dolores
-                dicta omnis voluptates magni doloribus inventore soluta
-                dignissimos eius dolor incidunt deserunt iusto aspernatur
-                tempora. Numquam.lorem
-              </p>
+      {Object.keys(starship).length !== 0 ? (
+        <div>
+          <div className="card mb-3">
+            <div className="row g-0">
+              <div className="col-md-4">
+                <img
+                  src={`https://starwars-visualguide.com/assets/img/starships/${uid}.jpg`}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                  onError={(event) => {
+                    event.target.src =
+                      "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                  }}
+                />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {starship.result?.properties?.name}
+                  </h5>
+                  <p className="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Delectus adipisci quibusdam reprehenderit, repellat dolores
+                    dicta omnis voluptates magni doloribus inventore soluta
+                    dignissimos eius dolor incidunt deserunt iusto aspernatur
+                    tempora. Numquam.lorem
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+          <table className="text-light table">
+            <thead>
+              <tr>
+                <th>Cargo Capacity:</th>
+                <th>Consumables:</th>
+                <th>crew:</th>
+                <th>Hyperdrive Rating:</th>
+                <th>Length:</th>
+                <th>Passengers:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{starship.result?.properties?.cargo_capacity}</td>
+                <td>{starship.result?.properties?.consumables}</td>
+                <td>{starship.result?.properties?.crew}</td>
+                <td>{starship.result?.properties?.hyperdrive_rating}</td>
+                <td>{starship.result?.properties?.length}</td>
+                <td>{starship.result?.properties?.passengers}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-      <table className="text-light table">
-        <thead>
-          <tr>
-            <th>Cargo Capacity:</th>
-            <th>Consumables:</th>
-            <th>crew:</th>
-            <th>Hyperdrive Rating:</th>
-            <th>Length:</th>
-            <th>Passengers:</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{starship.result?.properties?.cargo_capacity}</td>
-            <td>{starship.result?.properties?.consumables}</td>
-            <td>{starship.result?.properties?.crew}</td>
-            <td>{starship.result?.properties?.hyperdrive_rating}</td>
-            <td>{starship.result?.properties?.length}</td>
-            <td>{starship.result?.properties?.passengers}</td>
-          </tr>
-        </tbody>
-      </table>
+      ) : (
+        <div className="loading">Loading...</div>
+      )}
     </div>
   );
 };

@@ -32,3 +32,15 @@
 li {
   list-style: none;
 }
+
+.loading {
+  color: aliceblue;
+  margin: 0 auto;
+  display: block !important;
+}
+
+.error {
+  color: aliceblue;
+  margin: 0 auto;
+  display: block !important;
+}
