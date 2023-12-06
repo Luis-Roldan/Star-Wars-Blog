@@ -8,12 +8,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       error: null,
     },
     actions: {
-      removeFromFavorites: (uid) => {
+      removeFromFavorites: (name) => {
         const store = getStore();
         const updatedFavorites = store.favorites.filter(
-          (item) => item.someItem.uid !== uid
+          (item) => item.someItem.name !== name
         );
-        console.log(uid, "uid");
+        console.log(name, "name");
         console.log(updatedFavorites, "updatedFavorites");
         setStore({
           ...store,

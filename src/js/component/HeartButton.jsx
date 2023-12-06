@@ -11,7 +11,7 @@ export const HeartButton = (someItem) => {
   };
 
   const handleAddToFavorites = (item) => {
-    if (!favorites.some((i) => i.someItem.uid === item.someItem.uid))
+    if (!favorites.some((i) => i.someItem.name === item.someItem.name))
       actions.addToFavorites(item);
     else {
       alert("Ya se encuentra en la lista de favoritos");

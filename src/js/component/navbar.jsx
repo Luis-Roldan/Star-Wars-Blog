@@ -8,8 +8,8 @@ export const Navbar = () => {
   const favorites = store.favorites;
   console.log(store);
 
-  const handleRemoveFromFavorites = (uid) => {
-    actions.removeFromFavorites(uid);
+  const handleRemoveFromFavorites = (name) => {
+    actions.removeFromFavorites(name);
   };
 
   return (
@@ -43,7 +43,7 @@ export const Navbar = () => {
                 <i
                   className="fa-solid fa-trash"
                   onClick={() =>
-                    handleRemoveFromFavorites(favorite.someItem.uid)
+                    handleRemoveFromFavorites(favorite.someItem.name)
                   }
                 ></i>
               </li>
