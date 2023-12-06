@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/CardsStyles.css";
 import { HeartButton } from "../component/HeartButton.jsx";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const CharactersCard = () => {
   const { store, actions } = useContext(Context);
@@ -10,7 +11,7 @@ export const CharactersCard = () => {
     if (store.characters.length === 0) {
       actions.fetchCharacters();
     }
-  }, [actions, store.characters]);
+  }, []);
 
   if (store.error) {
     return <div>Error al cargar los personajes: {store.error}</div>;
@@ -54,7 +55,9 @@ export const CharactersCard = () => {
               </ul>
             </div>
             <div className="card-footer d-flex justify-content-between">
-              <button>Learn more!</button>
+              <Link to={`/character/${character.uid}`}>
+                <button>Learn more!</button>
+              </Link>
               <HeartButton someItem={character} />
             </div>
           </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/CardsStyles.css";
 import { HeartButton } from "../component/HeartButton.jsx";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const StarshipsCard = () => {
   const { store, actions } = useContext(Context);
@@ -54,7 +55,9 @@ export const StarshipsCard = () => {
               </ul>
             </div>
             <div className="card-footer d-flex justify-content-between">
-              <button>Learn more!</button>
+              <Link to={`/starship/${starship.uid}`}>
+                <button>Learn more!</button>
+              </Link>
               <HeartButton someItem={starship} />
             </div>
           </div>

@@ -15,13 +15,15 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex ">
       <div className="container-fluid navbarContent">
-        <a className="navbar-brand" href="#">
-          <img
-            src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png"
-            alt="img"
-            className="Logo"
-          />
-        </a>
+        <Link to="/">
+          <button>
+            <img
+              src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png"
+              alt="img"
+              className="Logo"
+            />
+          </button>
+        </Link>
       </div>
       <div className="dropdown dropstart">
         <button

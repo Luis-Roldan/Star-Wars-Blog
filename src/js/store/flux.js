@@ -8,9 +8,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       error: null,
     },
     actions: {
-      //     const favoritesFromLocalStorage = JSON.parse(localStorage.getItem("favorites")) || [],
-      // console.log(localStorage, "HOLAAAAAAAAAAAAAAAAAAAA"),
-
       removeFromFavorites: (uid) => {
         const store = getStore();
         const updatedFavorites = store.favorites.filter(
