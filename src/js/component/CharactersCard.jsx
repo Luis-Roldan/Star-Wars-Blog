@@ -24,7 +24,7 @@ export const CharactersCard = () => {
       {store.characters.length !== 0 ? (
         <div className="CardGroups">
           {store.characters.map((character) => (
-            <div key={character.uid} className="CharacterCard">
+            <div key={character.name} className="CharacterCard">
               <div className="card h-100">
                 <img
                   src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`}

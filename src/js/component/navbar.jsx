@@ -38,7 +38,7 @@ export const Navbar = () => {
         <ul className="dropdown-menu lg">
           {favorites.length > 0 ? (
             favorites.map((favorite) => (
-              <li key={favorite.someItem.uid} className="dropdown-item">
+              <li key={favorite.someItem.name} className="dropdown-item">
                 {favorite.someItem.name}
                 <i
                   className="fa-solid fa-trash"

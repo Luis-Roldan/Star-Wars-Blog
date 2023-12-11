@@ -21,7 +21,7 @@ export const PlanetDetails = () => {
 
   return (
     <div className="DetailsContainer">
-      {Object.keys(planet).length !== 0 ? (
+      {Object.keys(planets).length !== 0 ? (
         <div>
           <div className="card mb-3">
             <div className="row g-0">

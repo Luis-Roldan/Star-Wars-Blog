@@ -24,7 +24,7 @@ export const PlanetsCard = () => {
       {store.planets.length !== 0 ? (
         <div className="CardGroups">
           {store.planets.map((planet) => (
-            <div key={planet.uid} className="CharacterCard">
+            <div key={planet.name} className="CharacterCard">
               <div className="card h-100">
                 <img
                   src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}

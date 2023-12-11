@@ -26,7 +26,7 @@ export const StarshipsCard = () => {
       {store.starships.length !== 0 ? (
         <div className="CardGroups">
           {store.starships.map((starship) => (
-            <div key={starship.uid} className="CharacterCard">
+            <div key={starship.name} className="CharacterCard">
               <div className="card h-100">
                 <img
                   src={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`}
